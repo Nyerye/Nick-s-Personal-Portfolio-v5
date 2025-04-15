@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicholas Reilly | Portfolio</title>
 
   <!-- Bootstrap CSS -->
@@ -13,16 +13,45 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    .honeycomb-wrapper {
+      position: relative;
+      width: 800px;
+      height: 800px;
+      margin: 0 auto;
+      margin-top: 4rem;
+    }
+
+    .hex-icon {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .hex-icon img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .hex-icon p {
+      margin-top: 0.4rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary" href="#">Nicholas Reilly</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -30,53 +59,112 @@
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link btn btn-outline-primary resume-btn" href="http://localhost:3000/resume">Resume</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary resume-btn" href="http://localhost:3000/resume">Resume</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="container my-5">
     <h1 class="mb-4 text-center fw-bold text-primary">Welcome to My Portfolio</h1>
-    <p class="lead">I'm Nicholas Reilly, a Software Engineering Technology student at Conestoga College with hands-on experience in IT systems, embedded C development, and full-stack web applications. I specialize in building reliable, scalable systems using a wide array of languages and frameworks.</p>
-    
-    <p class="lead">What sets me apart? I bring a rare combination of enterprise IT experience, software development fluency, and practical hardware knowledge. I understand how systems run in real-world environments — not just in theory. From DevOps to dynamic data structures in C, I design with precision and performance in mind.</p>
-    
-    <p class="lead">Below are the languages and technologies I use daily. Whether I’m writing a full-stack CRM, optimizing a Python job scraper, or building system automation in PowerShell, I strive to produce clean, modern solutions that work as well as they look.</p>
+    <p class="lead">
+      I'm Nicholas Reilly, a Software Engineering Technology student at Conestoga College with hands-on experience in IT systems,
+      embedded C development, and full-stack web applications. I specialize in building reliable, scalable systems using a wide array of
+      languages and frameworks.
+    </p>
+    <p class="lead">
+      What sets me apart? I bring a rare combination of enterprise IT experience, software development fluency, and practical hardware
+      knowledge. I understand how systems run in real-world environments — not just in theory. From DevOps to dynamic data structures in C,
+      I design with precision and performance in mind.
+    </p>
+    <p class="lead">
+      Below are the languages and technologies I use daily. Whether I’m writing a full-stack CRM, optimizing a Python job scraper, or
+      building system automation in PowerShell, I strive to produce clean, modern solutions that work as well as they look.
+    </p>
   </section>
 
-  <!-- Languages Carousel -->
-  <section class="container my-5">
-    <h2 class="text-center mb-4 text-primary">Languages I Know</h2>
-    <div class="d-flex flex-wrap justify-content-center gap-4">
-      <!-- Example logo -->
-      <div class="text-center lang-tech-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" class="lang-icon" />
-        <p class="mt-2 fw-semibold">Python</p>
-      </div>
-      <div class="text-center lang-tech-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C" class="lang-icon" />
-        <p class="mt-2 fw-semibold">C</p>
-      </div>
-      <!-- Repeat for C++, C#, HTML, CSS, JS, TS, PHP, PowerShell -->
-    </div>
-  </section>
+  <section class="container mt-1 mb-3 text-center">
+    <h2 class="text-primary" style="margin-bottom: 0.5rem;">Languages and Technologies I Use</h2>
 
-  <!-- Technologies Carousel -->
-  <section class="container my-5">
-    <h2 class="text-center mb-4 text-primary">Technologies I Use</h2>
-    <div class="d-flex flex-wrap justify-content-center gap-4">
-      <!-- Example tech -->
-      <div class="text-center lang-tech-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes" class="lang-icon" />
-        <p class="mt-2 fw-semibold">Kubernetes</p>
+
+
+
+    <div class="honeycomb-wrapper" style="margin-top: 0.5rem;">
+      <!-- Center Icon -->
+      <div class="hex-icon" style="top: 364px; left: 364px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
+        <p>Python</p>
       </div>
-      <div class="text-center lang-tech-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker" class="lang-icon" />
-        <p class="mt-2 fw-semibold">Docker</p>
+
+      <!-- Inner Ring -->
+      <div class="hex-icon" style="top: 264px; left: 364px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+        <p>JavaScript</p>
       </div>
-      <!-- Repeat for MySQL, PostgreSQL, ASP.NET, Horizon, Azure DevOps, etc. -->
+      <div class="hex-icon" style="top: 314px; left: 464px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript">
+        <p>TypeScript</p>
+      </div>
+      <div class="hex-icon" style="top: 414px; left: 464px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++">
+        <p>C++</p>
+      </div>
+      <div class="hex-icon" style="top: 464px; left: 364px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#">
+        <p>C#</p>
+      </div>
+      <div class="hex-icon" style="top: 414px; left: 264px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS">
+        <p>CSS</p>
+      </div>
+      <div class="hex-icon" style="top: 314px; left: 264px;">
+        <img src="https://icon.icepanel.io/Technology/svg/Azure-Devops.svg" alt="Azure DevOps">
+        <p>Azure DevOps</p>
+      </div>
+
+      <!-- Outer Ring -->
+      <div class="hex-icon" style="top: 164px; left: 364px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git">
+        <p>Git</p>
+      </div>
+      <div class="hex-icon" style="top: 214px; left: 514px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML">
+        <p>HTML</p>
+      </div>
+      <div class="hex-icon" style="top: 514px; left: 514px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker">
+        <p>Docker</p>
+      </div>
+      <div class="hex-icon" style="top: 564px; left: 364px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg" alt="MySQL">
+        <p>MySQL</p>
+      </div>
+      <div class="hex-icon" style="top: 514px; left: 214px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL">
+        <p>PostgreSQL</p>
+      </div>
+      <div class="hex-icon" style="top: 414px; left: 164px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes">
+        <p>Kubernetes</p>
+      </div>
+      <div class="hex-icon" style="top: 314px; left: 164px;">
+        <img src="https://user-images.githubusercontent.com/7853266/59464560-6358af00-8dee-11e9-962c-ffa4815b7e55.png" alt="VMware Horizon">
+        <p>VMware</p>
+      </div>
+      <div class="hex-icon" style="top: 214px; left: 214px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/.NET_Core_Logo.svg" alt=".NET Core">
+        <p>.NET Core</p>
+      </div>
+      <div class="hex-icon" style="top: 314px; left: 564px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg" alt="VS Code">
+        <p>VS Code</p>
+      </div>
+      <div class="hex-icon" style="top: 414px; left: 564px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Visual_Studio_Icon_2019.svg" alt="Visual Studio">
+        <p>Visual Studio</p>
+      </div>
     </div>
   </section>
 
