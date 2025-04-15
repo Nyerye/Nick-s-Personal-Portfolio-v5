@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Nicholas Reilly</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <style>
+    .badge-brass {
+      position: relative;
+      background-color: #d4af37;
+      color: white;
+      overflow: hidden;
+    }
+
+    .badge-brass::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.2) 100%);
+      transform: skewX(-25deg);
+    }
+
+    .badge-brass:hover::after {
+      animation: shine 1s ease;
+    }
+
+    @keyframes shine {
+      0% { left: -75%; }
+      100% { left: 125%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="index.html">Nicholas Reilly</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary resume-btn" href="http://localhost:3000/resume">Resume</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="container my-5">
+    <h2 class="text-center fw-bold text-primary mb-5">Projects</h2>
+    <div class="row g-4 align-items-stretch">
+
+      <!-- Project 1 -->
+      <div class="col-md-6">
+        <div class="card project-card h-100">
+          <img src="assets/libaid.png" class="card-img-top" alt="LibAid Project Screenshot">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">LibAid Librarian System v3</h5>
+            <p class="card-text">
+              A system with a C-coded backend using dynamic memory allocation and five complex data structures. The C# frontend provides a GUI for managing books and users, with undo functionality.
+            </p>
+            <span class="badge badge-brass">C</span>
+            <span class="badge badge-brass">C#</span>
+            <a href="#" class="btn btn-dark btn-sm ms-2">View Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-6">
+        <div class="card project-card h-100">
+          <img src="assets/jobtracker.png" class="card-img-top" alt="Job Tracker Screenshot">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Municipal Job Tracking System</h5>
+            <p class="card-text">
+              A Python application using BeautifulSoup and regex filtering to scrape IT job postings from city websites and email results to users.
+            </p>
+            <span class="badge badge-brass">Python</span>
+            <a href="#" class="btn btn-dark btn-sm ms-2">View Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-6">
+        <div class="card project-card h-100">
+          <img src="assets/portfolio.png" class="card-img-top" alt="Portfolio Site Screenshot">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Personal Portfolio Site v5</h5>
+            <p class="card-text">
+              A clean, modern portfolio site built with TypeScript, NestJS, and Bootstrap. Includes a resume download, contact form, and a technology ring layout to showcase technical skills.
+            </p>
+            <span class="badge badge-brass">TypeScript</span>
+            <span class="badge badge-brass">NestJS</span>
+            <span class="badge badge-brass">Bootstrap</span>
+            <span class="badge badge-brass">CSS</span>
+            <span class="badge badge-brass">HTML</span>
+            <a href="#" class="btn btn-dark btn-sm ms-2">View Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-6">
+        <div class="card project-card h-100">
+          <img src="assets/logger.png" class="card-img-top" alt="PowerShell Logger Screenshot">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">System Resource Logger</h5>
+            <p class="card-text">
+              A PowerShell script that logs system performance metrics and includes an automated cleanup function. Easily scheduled with Windows Task Scheduler for automated monitoring.
+            </p>
+            <span class="badge badge-brass">PowerShell</span>
+            <a href="#" class="btn btn-dark btn-sm ms-2">View Repo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
