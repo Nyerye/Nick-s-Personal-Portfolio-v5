@@ -1,0 +1,36 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fefefe url('https://www.transparenttextures.com/patterns/marble.png') repeat;
+  color: #333;
+}
+
+h1, h2 {
+  color: #003087; /* Royal Blue */
+}
+
+.navbar {
+  border-bottom: 2px solid #d4af37; /* Brass */
+}
+
+.resume-btn {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.resume-btn:hover {
+  background-color: #d4af37;
+  color: white;
+}
+
+.lang-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.lang-tech-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 120px;
+}
