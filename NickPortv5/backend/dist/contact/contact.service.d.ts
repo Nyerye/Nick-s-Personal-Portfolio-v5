@@ -1,4 +1,3 @@
-import { ContactDto } from './dto/contact.dto';
 export declare class ContactService {
-    sendEmail(contact: ContactDto): Promise<void>;
+    sendEmail(name: string, email: string, subject: string, message: string): Promise<void>;
 }

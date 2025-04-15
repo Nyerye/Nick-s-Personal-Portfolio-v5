@@ -1,25 +1,43 @@
 import { Injectable } from '@nestjs/common';
 import * as nodemailer from 'nodemailer';
-import { ContactDto } from './dto/contact.dto';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 @Injectable()
 export class ContactService {
-  async sendEmail(contact: ContactDto): Promise<void> {
+  async sendEmail(name: string, email: string, subject: string, message: string): Promise<void> {
     const transporter = nodemailer.createTransport({
-      service: 'Outlook',
+      service: 'gmail',
       auth: {
-        user: 'nicholas_reilly@outlook.com',
-        pass: 'YOUR_APP_PASSWORD', // Create a secure app password for this Nicholas
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
+    
+    
 
     const mailOptions = {
-      from: contact.email,
-      to: 'nicholas_reilly@outlook.com',
-      subject: `Portfolio Contact: ${contact.subject}`,
-      text: `From: ${contact.name} <${contact.email}>\n\n${contact.message}`,
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `New Contact Form Submission: ${subject}`,
+      html: `
+        <h2>New message from your portfolio site</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Message:</strong><br>${message}</p>
+      `,
     };
+    
+    
 
-    await transporter.sendMail(mailOptions);
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      console.log("✅ Email sent:", info.response);
+    } catch (err) {
+      console.error("❌ Email sending failed:", err);
+      throw err;
+    }
   }
 }

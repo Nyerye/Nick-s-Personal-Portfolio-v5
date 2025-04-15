@@ -15,23 +15,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ContactController = void 0;
 const common_1 = require("@nestjs/common");
 const contact_service_1 = require("./contact.service");
-const contact_dto_1 = require("./dto/contact.dto");
 let ContactController = class ContactController {
     contactService;
     constructor(contactService) {
         this.contactService = contactService;
     }
-    async handleContact(contactDto) {
-        await this.contactService.sendEmail(contactDto);
-        return { message: 'Message sent successfully!' };
+    async handleContact(body, res) {
+        const { name, email, subject, message } = body;
+        try {
+            await this.contactService.sendEmail(name, email, subject, message);
+            return res.status(common_1.HttpStatus.OK).json({ success: true });
+        }
+        catch (err) {
+            console.error('Email sending failed:', err);
+            return res.status(common_1.HttpStatus.INTERNAL_SERVER_ERROR).json({
+                success: false,
+                error: err.message || 'Failed to send message',
+            });
+        }
     }
 };
 exports.ContactController = ContactController;
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Res)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [contact_dto_1.ContactDto]),
+    __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], ContactController.prototype, "handleContact", null);
 exports.ContactController = ContactController = __decorate([

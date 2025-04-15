@@ -70,14 +70,13 @@
     <h2 class="text-center fw-bold text-primary mb-4">Contact Me</h2>
     <p class="text-center mb-5">Have a project idea, opportunity, or question? Drop a message below!</p>
 
-    <!-- Success Message Placeholder -->
     <div id="successMessage" class="form-success d-none">
       Thank you for your message! I’ll get back to you shortly.
     </div>
 
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form action="http://localhost:3000/contact" method="POST" id="contactForm">
+        <form id="contactForm">
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" required />
@@ -105,14 +104,36 @@
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      // You'd replace this with an actual fetch/POST to your backend
-      setTimeout(() => {
-        document.getElementById("successMessage").classList.remove("d-none");
-        document.getElementById("contactForm").reset();
-      }, 500);
+      const form = e.target;
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
+
+      try {
+        const res = await fetch('http://localhost:3000/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+
+        const data = await res.json();
+
+        if (data.success) {
+          document.getElementById("successMessage").classList.remove("d-none");
+          form.reset();
+        } else {
+          alert("Failed to send message. Please try again.");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("An error occurred while sending your message.");
+      }
     });
   </script>
 </body>
