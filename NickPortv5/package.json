@@ -1,0 +1,4 @@
+"scripts": {
+  "start": "lite-server",
+  "build": "tsc"
+}
