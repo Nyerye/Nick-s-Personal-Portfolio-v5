@@ -1,7 +1,13 @@
+/* ======================
+   GENERAL STYLES
+====================== */
+
 body {
   font-family: 'Inter', sans-serif;
-  background: #fefefe url('https://www.transparenttextures.com/patterns/marble.png') repeat;
+  background: #fefefe url('https://images.unsplash.com/photo-1551554781-c46200ea959d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2hpdGUlMjBtYXJibGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww') repeat;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2 {
@@ -22,15 +28,76 @@ h1, h2 {
   color: white;
 }
 
-.lang-icon {
-  width: 64px;
-  height: 64px;
+/* ======================
+   HONEYCOMB WRAPPER
+====================== */
+.honeycomb-wrapper {
+  margin-top: 1rem;
+  transform: translateY(-100px);
 }
 
-.lang-tech-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  width: 120px;
+
+
+/* ======================
+   HEX ICON BASE STYLE
+====================== */
+.hex-icon {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.hex-icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px rgba(0, 48, 135, 0.25));
+}
+
+.hex-icon img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.hex-icon p {
+  margin-top: 0.4rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+/* ======================
+   ICON RING POSITIONING
+====================== */
+/* Inner Ring */
+.hex-icon[style*="top: 200px"] { top: 200px !important; left: 360px !important; } /* center */
+.hex-icon[style*="top: 100px"] { top: 100px !important; left: 360px !important; }
+.hex-icon[style*="top: 150px; left: 460px"] { top: 130px !important; left: 480px !important; }
+.hex-icon[style*="top: 250px; left: 460px"] { top: 270px !important; left: 480px !important; }
+.hex-icon[style*="top: 300px"] { top: 320px !important; left: 360px !important; }
+.hex-icon[style*="top: 250px; left: 260px"] { top: 270px !important; left: 240px !important; }
+.hex-icon[style*="top: 150px; left: 260px"] { top: 130px !important; left: 240px !important; }
+
+/* Outer Ring Adjustments */
+.git       { top: 20px !important;  left: 360px !important; }
+.html      { top: 80px !important;  left: 530px !important; }
+.docker    { top: 230px !important; left: 560px !important; }
+.mysql     { top: 380px !important; left: 530px !important; }
+.postgresql{ top: 440px !important; left: 360px !important; }
+.csharp    { top: 380px !important; left: 190px !important; }
+.kubernetes{ top: 230px !important; left: 160px !important; }
+.vmware    { top: 80px !important;  left: 190px !important; }
+.netcore   { top: 130px !important; left: 300px !important; }
+.vscode    { top: 130px !important; left: 420px !important; }
+.visualstudio { top: 80px !important; left: 390px !important; }
+
+@media (max-width: 768px) {
+  .honeycomb-wrapper {
+    transform: scale(0.8);
+    transform-origin: top center;
+    height: 650px;
+  }
 }
