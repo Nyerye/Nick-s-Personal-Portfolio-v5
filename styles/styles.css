@@ -10,8 +10,12 @@ body {
   padding: 0;
 }
 
-h1, h2 {
-  color: #003087; /* Royal Blue */
+a.navbar-brand{
+  color: #36454F !important;
+}
+
+h1.text-primary, h2.text-primary {
+  color: #36454F !important; /* Charcoal */
 }
 
 .navbar {
@@ -35,8 +39,6 @@ h1, h2 {
   margin-top: 1rem;
   transform: translateY(-100px);
 }
-
-
 
 /* ======================
    HEX ICON BASE STYLE
@@ -101,3 +103,75 @@ h1, h2 {
     height: 650px;
   }
 }
+
+
+/* ======================
+   PROJECTS PAGE
+====================== */
+.project-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+}
+
+
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 48, 135, 0.15); /* Royal blue tint */
+}
+
+.project-image {
+  border-radius: 12px;
+  max-height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-card h3 {
+  color: #36454F; /*Charcoal*/
+  font-weight: 600;
+}
+
+.project-card p {
+  color: #444;
+}
+
+.project-card .btn-primary {
+  background-color: #36454F; /*Charcoal*/
+  border-color:s #36454F; /*Charcoal*/
+}
+
+.project-card .btn-primary:hover {
+  background-color: #002060;
+  border-color: #002060;
+}
+
+.badge-brass {
+  background-color: #d4af37;
+  color: white;
+}
+
+/* ======================
+   Project Card Hover Effect
+====================== */
+.project-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.25); /* Brass glow */
+}
+
