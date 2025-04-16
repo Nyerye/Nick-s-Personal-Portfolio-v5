@@ -1,6 +1,4 @@
-from IPython.display import Markdown
 
-readme_content = """
 # 💼 Nicholas Reilly – Personal Portfolio v5
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
