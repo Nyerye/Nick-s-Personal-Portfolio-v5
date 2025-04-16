@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,12 +45,14 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold text-primary" href="index.html">Nicholas Reilly</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -57,9 +60,20 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link active" href="#">Contact</a></li>
+          <!-- Resume Button -->
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-primary resume-btn" href="http://localhost:3000/resume">Resume</a>
+            <a class="nav-link btn btn-outline-primary resume-btn" href="http://localhost:3000/nicks_resume.pdf"
+              download>Resume</a>
           </li>
+
+          <!-- Dark Mode Toggle -->
+          <li class="nav-item d-flex align-items-center ms-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="themeToggle">
+              <label class="form-check-label ms-2" for="themeToggle" id="themeIcon">🌞</label>
+            </div>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -136,5 +150,7 @@
       }
     });
   </script>
+  <script src="scripts/toggle-theme.js"></script>
 </body>
+
 </html>
