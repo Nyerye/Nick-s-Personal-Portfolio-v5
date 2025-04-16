@@ -1,25 +1,30 @@
-/* ======================
+/* ====================================
    GENERAL STYLES
-====================== */
-
+==================================== */
 body {
   font-family: 'Inter', sans-serif;
-  background: #fefefe url('https://images.unsplash.com/photo-1551554781-c46200ea959d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2hpdGUlMjBtYXJibGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww') repeat;
+  background: #fefefe url('lightMarble.png') repeat;
   color: #333;
   margin: 0;
   padding: 0;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-a.navbar-brand{
+a.navbar-brand {
   color: #36454F !important;
 }
 
-h1.text-primary, h2.text-primary {
+h1.text-primary,
+h2.text-primary {
   color: #36454F !important; /* Charcoal */
 }
 
 .navbar {
   border-bottom: 2px solid #d4af37; /* Brass */
+}
+
+.navbar a {
+  transition: color 0.3s ease;
 }
 
 .resume-btn {
@@ -32,17 +37,56 @@ h1.text-primary, h2.text-primary {
   color: white;
 }
 
-/* ======================
-   HONEYCOMB WRAPPER
-====================== */
+/* ====================================
+   DARK MODE STYLES
+==================================== */
+body.dark-mode {
+  background: #000 url('darkMarble.png') repeat;
+  background-size: cover;
+  color: #f8f8f8;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode .text-primary,
+body.dark-mode .navbar a {
+  color: #d4af37 !important; /* Brass */
+}
+
+body.dark-mode .navbar {
+  background-color: #111 !important;
+  border-color: #d4af37;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-control:focus {
+  background-color: #111;
+  color: #f8f8f8;
+  border-color: #d4af37;
+}
+
+body.dark-mode .resume-btn {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+body.dark-mode .resume-btn:hover {
+  background-color: #d4af37;
+  color: black;
+}
+
+body.dark-mode .tech-caption {
+  color: white !important;
+}
+
+/* ====================================
+   HONEYCOMB SECTION
+==================================== */
 .honeycomb-wrapper {
   margin-top: 1rem;
   transform: translateY(-100px);
 }
 
-/* ======================
-   HEX ICON BASE STYLE
-====================== */
 .hex-icon {
   position: absolute;
   display: flex;
@@ -71,11 +115,13 @@ h1.text-primary, h2.text-primary {
   color: #333;
 }
 
-/* ======================
-   ICON RING POSITIONING
-====================== */
+body.dark-mode .hex-icon p {
+  color: white;
+}
+
+/* ========== Icon Ring Positioning ========== */
 /* Inner Ring */
-.hex-icon[style*="top: 200px"] { top: 200px !important; left: 360px !important; } /* center */
+.hex-icon[style*="top: 200px"] { top: 200px !important; left: 360px !important; }
 .hex-icon[style*="top: 100px"] { top: 100px !important; left: 360px !important; }
 .hex-icon[style*="top: 150px; left: 460px"] { top: 130px !important; left: 480px !important; }
 .hex-icon[style*="top: 250px; left: 460px"] { top: 270px !important; left: 480px !important; }
@@ -83,19 +129,20 @@ h1.text-primary, h2.text-primary {
 .hex-icon[style*="top: 250px; left: 260px"] { top: 270px !important; left: 240px !important; }
 .hex-icon[style*="top: 150px; left: 260px"] { top: 130px !important; left: 240px !important; }
 
-/* Outer Ring Adjustments */
-.git       { top: 20px !important;  left: 360px !important; }
-.html      { top: 80px !important;  left: 530px !important; }
-.docker    { top: 230px !important; left: 560px !important; }
-.mysql     { top: 380px !important; left: 530px !important; }
-.postgresql{ top: 440px !important; left: 360px !important; }
-.csharp    { top: 380px !important; left: 190px !important; }
-.kubernetes{ top: 230px !important; left: 160px !important; }
-.vmware    { top: 80px !important;  left: 190px !important; }
-.netcore   { top: 130px !important; left: 300px !important; }
-.vscode    { top: 130px !important; left: 420px !important; }
+/* Outer Ring */
+.git { top: 20px !important; left: 360px !important; }
+.html { top: 80px !important; left: 530px !important; }
+.docker { top: 230px !important; left: 560px !important; }
+.mysql { top: 380px !important; left: 530px !important; }
+.postgresql { top: 440px !important; left: 360px !important; }
+.csharp { top: 380px !important; left: 190px !important; }
+.kubernetes { top: 230px !important; left: 160px !important; }
+.vmware { top: 80px !important; left: 190px !important; }
+.netcore { top: 130px !important; left: 300px !important; }
+.vscode { top: 130px !important; left: 420px !important; }
 .visualstudio { top: 80px !important; left: 390px !important; }
 
+/* Responsive Layout */
 @media (max-width: 768px) {
   .honeycomb-wrapper {
     transform: scale(0.8);
@@ -104,40 +151,33 @@ h1.text-primary, h2.text-primary {
   }
 }
 
-
-/* ======================
-   PROJECTS PAGE
-====================== */
+/* ====================================
+   PROJECT CARD STYLING
+==================================== */
 .project-card {
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
-
-.project-card img {
-  height: 250px;
-  object-fit: cover;
-  width: 100%;
-}
-
-
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 48, 135, 0.15); /* Royal blue tint */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.25); /* Brass glow */
 }
 
-.project-image {
+.project-image,
+.project-card img {
   border-radius: 12px;
-  max-height: 200px;
+  max-height: 250px;
   object-fit: cover;
   width: 100%;
 }
 
 .project-card h3 {
-  color: #36454F; /*Charcoal*/
+  color: #36454F;
   font-weight: 600;
 }
 
@@ -146,8 +186,8 @@ h1.text-primary, h2.text-primary {
 }
 
 .project-card .btn-primary {
-  background-color: #36454F; /*Charcoal*/
-  border-color:s #36454F; /*Charcoal*/
+  background-color: #36454F;
+  border-color: #36454F;
 }
 
 .project-card .btn-primary:hover {
@@ -155,23 +195,32 @@ h1.text-primary, h2.text-primary {
   border-color: #002060;
 }
 
+/* ====================================
+   BRASS BADGE STYLE
+==================================== */
 .badge-brass {
+  position: relative;
   background-color: #d4af37;
   color: white;
-}
-
-/* ======================
-   Project Card Hover Effect
-====================== */
-.project-card {
-  border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.25); /* Brass glow */
+.badge-brass::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.2) 100%);
+  transform: skewX(-25deg);
 }
 
+.badge-brass:hover::after {
+  animation: shine 1s ease;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}

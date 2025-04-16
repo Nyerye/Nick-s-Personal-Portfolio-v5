@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,6 +48,7 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
@@ -59,8 +61,17 @@
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <!-- Resume Button -->
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-primary resume-btn" href="http://localhost:3000/resume">Resume</a>
+            <a class="nav-link btn btn-outline-primary resume-btn" href="http://localhost:3000/nicks_resume.pdf"
+              download>Resume</a>
+          </li>
+          <!-- Dark Mode Toggle -->
+          <li class="nav-item d-flex align-items-center ms-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="themeToggle">
+              <label class="form-check-label ms-2" for="themeToggle" id="themeIcon">🌞</label>
+            </div>
           </li>
         </ul>
       </div>
@@ -70,17 +81,23 @@
   <section class="container my-5">
     <h1 class="mb-4 text-center fw-bold text-primary">Welcome to My Portfolio</h1>
     <p class="lead">
-      I'm Nicholas Reilly, a Software Engineering Technology student at Conestoga College with hands-on experience in IT systems. I am quite well rounded when it comes to
-      my skills, but my best work is done in Python, C++, and C#. I have a passion for creating efficient, scalable solutions that solve real-world problems. 
-      My journey in technology has been fueled by a desire to understand how things work and to build systems that make life easier for everyone.
+      I'm Nicholas Reilly, a Software Engineering Technology student at Conestoga College with hands-on experience in IT
+      systems. I am quite well rounded when it comes to
+      my skills, but my best work is done in Python, C++, and C#. I have a passion for creating efficient, scalable
+      solutions that solve real-world problems.
+      My journey in technology has been fueled by a desire to understand how things work and to build systems that make
+      life easier for everyone.
     </p>
     <p class="lead">
-      What sets me apart? I bring a rare combination of enterprise IT experience, software development fluency, and practical hardware
-      knowledge. I understand how systems run in real-world environments — not just in theory. From Python data scripts to massive, full scale data structures in C, I have 
-      a wide skill set that allows me to be versitile and useful for a variety of different tasks. 
+      What sets me apart? I bring a rare combination of enterprise IT experience, software development fluency, and
+      practical hardware
+      knowledge. I understand how systems run in real-world environments — not just in theory. From Python data scripts
+      to massive, full scale data structures in C, I have
+      a wide skill set that allows me to be versitile and useful for a variety of different tasks.
     </p>
     <p class="lead">
-      I am always looking for new challenges and opportunities to grow. If you're interested in collaborating or have a project in mind, feel free to reach out!
+      I am always looking for new challenges and opportunities to grow. If you're interested in collaborating or have a
+      project in mind, feel free to reach out!
   </section>
 
   <section class="container mt-1 mb-3 text-center">
@@ -132,7 +149,8 @@
         <p>HTML</p>
       </div>
       <div class="hex-icon" style="top: 514px; left: 514px;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg"
+          alt="Docker">
         <p>Docker</p>
       </div>
       <div class="hex-icon" style="top: 564px; left: 364px;">
@@ -144,11 +162,13 @@
         <p>PostgreSQL</p>
       </div>
       <div class="hex-icon" style="top: 414px; left: 164px;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg"
+          alt="Kubernetes">
         <p>Kubernetes</p>
       </div>
       <div class="hex-icon" style="top: 314px; left: 164px;">
-        <img src="https://user-images.githubusercontent.com/7853266/59464560-6358af00-8dee-11e9-962c-ffa4815b7e55.png" alt="VMware Horizon">
+        <img src="https://user-images.githubusercontent.com/7853266/59464560-6358af00-8dee-11e9-962c-ffa4815b7e55.png"
+          alt="VMware Horizon">
         <p>VMware</p>
       </div>
       <div class="hex-icon" style="top: 214px; left: 214px;">
@@ -168,5 +188,7 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/toggle-theme.js"></script>
 </body>
+
 </html>
