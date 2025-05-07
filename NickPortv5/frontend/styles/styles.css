@@ -1,6 +1,12 @@
-/* ====================================
-   GENERAL STYLES
-==================================== */
+/*
+* FILE		      : styles.css
+* PROJECT	      : Nick's Personal Portfolio Site v5
+* PROGRAMMER	  : Nicholas Reilly
+* FIRST VERSION	: 2025-01-05
+* DESCRIPTION	  : List of all the CSS styles that I incorporated into the site that was not a Bootstrap style.
+*/
+
+/* General styles used on the webpage on light and dark mode*/
 body {
   font-family: 'Inter', sans-serif;
   background: #fefefe url('lightMarble.png') repeat;
@@ -37,9 +43,7 @@ h2.text-primary {
   color: white;
 }
 
-/* ====================================
-   DARK MODE STYLES
-==================================== */
+/* Dark Mode Styles (for when the toggle switch is hit)*/
 body.dark-mode {
   background: #000 url('darkMarble.png') repeat;
   background-size: cover;
@@ -79,9 +83,7 @@ body.dark-mode .tech-caption {
   color: white !important;
 }
 
-/* ====================================
-   HONEYCOMB SECTION
-==================================== */
+/* Honeycomb web (where my languages and technologies are)*/
 .honeycomb-wrapper {
   margin-top: 1rem;
   transform: translateY(-100px);
@@ -119,7 +121,7 @@ body.dark-mode .hex-icon p {
   color: white;
 }
 
-/* ========== Icon Ring Positioning ========== */
+/* Ring Positioning */
 /* Inner Ring */
 .hex-icon[style*="top: 200px"] { top: 200px !important; left: 360px !important; }
 .hex-icon[style*="top: 100px"] { top: 100px !important; left: 360px !important; }
@@ -151,9 +153,7 @@ body.dark-mode .hex-icon p {
   }
 }
 
-/* ====================================
-   PROJECT CARD STYLING
-==================================== */
+/* Project Card Styling */
 .project-card {
   background: white;
   border: 1px solid #e0e0e0;
@@ -195,9 +195,7 @@ body.dark-mode .hex-icon p {
   border-color: #002060;
 }
 
-/* ====================================
-   BRASS BADGE STYLE
-==================================== */
+/* Brass Programming Badge Styles */
 .badge-brass {
   position: relative;
   background-color: #d4af37;
